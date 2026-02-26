@@ -1,9 +1,13 @@
-<html>
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
 
 <head>
     <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Event Ticket Purchase | UrbanEvents</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700;800;900&amp;display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"
         rel="stylesheet" />
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
@@ -17,280 +21,239 @@
             theme: {
                 extend: {
                     colors: {
-                        "primary": "#1349ec",
-                        "accent": "#ff6b00",
-                        "background-light": "#f6f6f8",
-                        "background-dark": "#101522",
+                        "primary": "#8c2bee",
+                        "background-light": "#f7f6f8",
+                        "background-dark": "#120d18",
+                        "surface-dark": "#1e1626",
+                        "border-dark": "#362348",
                     },
                     fontFamily: {
-                        "display": ["Spline Sans", "sans-serif"]
+                        "display": ["Space Grotesk", "sans-serif"]
                     },
-                    borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
                 },
             },
         }
     </script>
     <style>
         body {
-            font-family: 'Spline Sans', sans-serif;
+            font-family: 'Space Grotesk', sans-serif;
         }
 
-        .urban-gradient {
-            background: linear-gradient(135deg, #1349ec 0%, #7000ff 100%);
+        .neon-glow {
+            box-shadow: 0 0 15px rgba(140, 43, 238, 0.4);
         }
 
-        .neon-border {
-            box-shadow: 0 0 15px rgba(19, 73, 236, 0.3);
+        .neon-glow:hover {
+            box-shadow: 0 0 25px rgba(140, 43, 238, 0.6);
         }
     </style>
 </head>
 
-<body class="bg-background-light text-slate-900 font-display">
-    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
-        <div class="layout-container flex h-full grow flex-col">
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+    <!-- Top Navigation Bar -->
+    <header class="border-b border-border-dark bg-background-dark/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-10">
+                <div class="flex items-center gap-3">
+                    <div class="text-primary">
+                        <span class="material-symbols-outlined text-4xl">theater_comedy</span>
+                    </div>
+                    <h1 class="text-2xl font-bold tracking-tight">URBAN<span
+                            class="text-primary text-opacity-90">EVENTS</span></h1>
+                </div>
 
-            <main class="flex-1">
-                <!-- Hero Section & Form Container -->
-                <div class="max-w-7xl mx-auto px-6 md:px-10 py-10 md:py-20">
-                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-                        <!-- Content Left -->
-                        <div class="lg:col-span-7 flex flex-col gap-8">
-                            <div
-                                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-black uppercase tracking-widest">
-                                <span class="relative flex h-2 w-2">
-                                    <span
-                                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
-                                    <span class="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
-                                </span>
-                                Proximo Evento: Oct 12
-                            </div>
-                            <div class="flex flex-col gap-4">
-                                <h1
-                                    class="text-slate-900 text-6xl md:text-8xl font-black leading-[0.9] tracking-tighter uppercase italic">
-                                    LA <span class="text-primary">ESTACION</span> ESTA LLAMANDO.
-                                </h1>
-                                <p class="text-slate-600 text-lg md:text-xl font-medium max-w-xl leading-relaxed">
-                                    Experimenta la energía pura del underground. Únete a miles de personas en Estación
-                                    Central para la mayor toma urbana del año
-                                </p>
-                            </div>
-                            <!-- Event Quick Stats -->
-                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
-                                <div
-                                    class="flex flex-col gap-2 rounded-2xl p-6 bg-white border border-slate-200 shadow-sm">
-                                    <span class="material-symbols-outlined text-primary">calendar_today</span>
-                                    <p class="text-slate-500 text-xs font-bold uppercase tracking-widest">Fecha</p>
-                                    <p class="text-slate-900 text-xl font-black">Sat, Oct 12</p>
-                                </div>
-                                <div
-                                    class="flex flex-col gap-2 rounded-2xl p-6 bg-white border border-slate-200 shadow-sm">
-                                    <span class="material-symbols-outlined text-primary">location_on</span>
-                                    <p class="text-slate-500 text-xs font-bold uppercase tracking-widest">Lugar</p>
-                                    <p class="text-slate-900 text-xl font-black">Estación Central</p>
-                                </div>
-                                <div
-                                    class="flex flex-col gap-2 rounded-2xl p-6 bg-white border border-slate-200 shadow-sm">
-                                    <span class="material-symbols-outlined text-primary">payments</span>
-                                    <p class="text-slate-500 text-xs font-bold uppercase tracking-widest">Precios
-                                    </p>
-                                    <p class="text-slate-900 text-xl font-black">$2500</p>
-                                </div>
-                            </div>
-                            <!-- Main Feature Image -->
-                            <div class="w-full aspect-video rounded-3xl overflow-hidden relative mt-4 shadow-2xl">
-                                <div class="absolute inset-0 urban-gradient opacity-20 z-10"></div>
-                                <img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 cursor-pointer"
-                                    data-alt="Crowd at a neon-lit urban music festival with graffiti background"
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAb6HX2xCgKZ_X8HcHt8LNcS2Kas5F6Hf-GjLSQ9JB0Bb2iPw3uWDnuwXCwyz-6jMV2plmePyVAqgqr6cBH8USgbIaMTuvXCeZPLgQ8Ie_pA8zhJ7aGh0_rF8gPYR_5-8rc8Co0MBEtTxXozaH_ICiTQL67TeCDEyPAmaBi-EtxnwI0duu3c3nMlM9r5GjbpZ2Ngfg3xsftV03FT6I0m_plGzqfAZtg1Q0GGJlpVE-jNPp4OxwK1uwJL-b72vzEFaDeH-s9vpiZLk5z" />
-                                <div class="absolute bottom-6 left-6 z-20">
-                                    <div
-                                        class="bg-white/90 backdrop-blur px-4 py-2 rounded-full flex items-center gap-2">
-                                        <span class="material-symbols-outlined text-primary">groups</span>
-                                        <span class="text-slate-900 text-sm font-bold uppercase italic">Limite de
-                                            Capacidad: 50 Tickets restantes</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Registration Form Right -->
-                        <div class="lg:col-span-5 lg:sticky lg:top-28">
-                            <div
-                                    class="bg-white rounded-3xl p-8 shadow-xl border border-slate-200 flex flex-col gap-8">
-                                    <div class="flex flex-col gap-2">
-                                        <h3 class="text-slate-900 text-3xl font-black uppercase tracking-tight italic">
-                                            Asegure su Lugar</h3>
-                                        <p class="text-slate-500 text-sm">Las entradas se están vendiendo rápido.
-                                            Completa tus
-                                            datos a continuación para unirte al movimiento.</p>
-                                    </div>
-                                    <form id="formCompra" class="flex flex-col gap-5">
-                                        <div class="grid grid-cols-2 gap-4">
-                                            <div class="flex flex-col gap-2">
-                                                <label
-                                                    class="text-slate-700 text-xs font-black uppercase tracking-widest px-1">Nombre</label>
-                                                <input
-                                                    id="nombreUser"
-                                                    class="w-full h-12 rounded-xl bg-slate-50 border-slate-200 focus:border-primary focus:ring-primary text-sm font-medium"
-                                                    placeholder="John" type="text" />
-                                            </div>
-                                            <div class="flex flex-col gap-2">
-                                                <label
-                                                    class="text-slate-700 text-xs font-black uppercase tracking-widest px-1">Apellido</label>
-                                                <input
-                                                    id="apellidoUser"
-                                                    class="w-full h-12 rounded-xl bg-slate-50 border-slate-200 focus:border-primary focus:ring-primary text-sm font-medium"
-                                                    placeholder="Doe" type="text" />
-                                            </div>
-                                        </div>
-                                        <div class="flex flex-col gap-2">
-                                            <label
-                                                class="text-slate-700 text-xs font-black uppercase tracking-widest px-1">Email</label>
-                                            <input
-                                                id="emailUser"
-                                                class="w-full h-12 rounded-xl bg-slate-50 border-slate-200 focus:border-primary focus:ring-primary text-sm font-medium"
-                                                placeholder="john@example.com" type="email" />
-                                        </div>
-                                        <div class="flex flex-col gap-2">
-                                            <label
-                                                class="text-slate-700 text-xs font-black uppercase tracking-widest px-1">Cantidad
-                                                de Entradas</label>
-                                            <select
-                                                id="cantUser"
-                                                class="w-full h-12 rounded-xl bg-slate-50 border-slate-200 focus:border-primary focus:ring-primary text-sm font-medium">
-                                                <option>1 Ticket</option>
-                                                <option>2 Tickets</option>
-                                                <option>3 Tickets</option>
-                                                <option>4 Tickets</option>
-                                                <option>Group (5+)</option>
-                                            </select>
-                                        </div>
-                                        <div
-                                            class="mt-4 p-4 rounded-2xl bg-primary/5 border border-primary/10 flex justify-between items-center">
-                                            <div class="flex flex-col">
-                                                <span
-                                                    class="text-slate-500 text-[10px] font-bold uppercase tracking-tighter">Precio
-                                                    Total</span>
-                                                <span
-                                                    class="text-primary text-2xl font-black tracking-tight">$8500.00</span>
-                                            </div>
-                                            <span class="text-slate-400 text-xs italic">Impuestos incluidos</span>
-                                        </div>
-                                        <button
-                                            id="btnComprar"
-                                            class="w-full h-14 bg-primary hover:bg-primary/90 text-white font-black uppercase tracking-[0.2em] rounded-2xl transition-all shadow-lg shadow-primary/20 flex items-center justify-center gap-2 mt-2"
-                                            type="submit">
-                                            Proceder al Pago
-                                            <span class="material-symbols-outlined">arrow_forward</span>
-                                        </button>
-                                        <p class="text-slate-400 text-[10px] text-center px-4 leading-tight">
-                                            Al hacer clic en "Proceder al Pago" aceptas nuestros Términos de Servicio y
-                                            Política de Conducta del Evento.
-                                        </p>
-                                    </form>
-                                </div>
-                            <!-- Trust Badges -->
-                            <div class="mt-6 flex justify-center items-center gap-8 opacity-50 grayscale contrast-125">
-                                <span class="material-symbols-outlined text-4xl">verified_user</span>
-                                <span class="material-symbols-outlined text-4xl">local_activity</span>
-                                <span class="material-symbols-outlined text-4xl">confirmation_number</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Secondary Info Section -->
-                <section class="bg-white py-20 border-t border-slate-200">
-                    <div class="max-w-7xl mx-auto px-6 md:px-10">
-                        <div class="flex flex-col md:flex-row justify-between items-end gap-6 mb-12">
-                            <div>
-                                <h2
-                                    class="text-slate-900 text-4xl md:text-5xl font-black tracking-tighter uppercase italic">
-                                    The Venue</h2>
-                                <p class="text-slate-500 font-medium">Estación Central, the industrial heart of the
-                                    city.</p>
-                            </div>
-                            <button
-                                class="px-8 py-3 rounded-full border-2 border-primary text-primary font-bold uppercase tracking-widest hover:bg-primary hover:text-white transition-all">
-                                View Map
-                            </button>
-                        </div>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                            <div class="h-96 rounded-3xl overflow-hidden shadow-lg">
-                                <img class="w-full h-full object-cover"
-                                    data-alt="Interior of a large historic train station at night with modern lighting"
-                                    data-location="Santiago"
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBc5zeh_wz-XvRSLmYRd3shWnAkhARCNyXlRF7j3NAkepQN6moV1XdPPSP5HcIU7cl7oHsfFmwuVx-umhbDk6YdAUcEjoaO4CaaGOrAh4PgEyLuWEpiRm-fmeZjHQFIbDMrdxkgk4YfO4Y_7lS3ZQ2z91GGa2Ubch_fTQEkQzpMmOLByFlFSsvX-Cyj20Sn-dQgjrj796PFj-Fli0GtkVUwfmxaLFBlDGPUcQWopY1BkCbX47R_cMy1_2MH5pcWC3EBLhdRLrijd_XW" />
-                            </div>
-                            <div class="flex flex-col gap-6 justify-center">
-                                <div class="flex gap-4 items-start">
-                                    <div
-                                        class="size-12 rounded-2xl bg-accent/10 flex items-center justify-center shrink-0">
-                                        <span class="material-symbols-outlined text-accent">train</span>
-                                    </div>
-                                    <div>
-                                        <h4 class="text-slate-900 text-lg font-black uppercase">Direct Access</h4>
-                                        <p class="text-slate-600">Located directly connected to the main transit hub. No
-                                            parking stress, arrive in style by train or bus.</p>
-                                    </div>
-                                </div>
-                                <div class="flex gap-4 items-start">
-                                    <div
-                                        class="size-12 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
-                                        <span class="material-symbols-outlined text-primary">security</span>
-                                    </div>
-                                    <div>
-                                        <h4 class="text-slate-900 text-lg font-black uppercase">Safe Zone</h4>
-                                        <p class="text-slate-600">Enhanced security measures and safe-walk volunteers
-                                            throughout the venue and station area.</p>
-                                    </div>
-                                </div>
-                                <div class="flex gap-4 items-start">
-                                    <div
-                                        class="size-12 rounded-2xl bg-slate-100 flex items-center justify-center shrink-0">
-                                        <span class="material-symbols-outlined text-slate-600">volume_up</span>
-                                    </div>
-                                    <div>
-                                        <h4 class="text-slate-900 text-lg font-black uppercase">Premium Sound</h4>
-                                        <p class="text-slate-600">Custom acoustic treatment for the station's unique
-                                            architecture paired with 100kW sound systems.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </main>
-            <footer class="bg-slate-900 text-white py-12 px-6 md:px-20">
-                <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-                    <div class="flex items-center gap-3">
-                        <div class="size-8 bg-white rounded flex items-center justify-center text-slate-900">
-                            <span class="material-symbols-outlined text-xl">train</span>
-                        </div>
-                        <h2 class="text-white text-xl font-black leading-tight tracking-tighter uppercase italic">Joda
-                            en la Estación</h2>
-                    </div>
-                    <div class="flex gap-8 text-slate-400 text-sm font-bold uppercase">
-                        <a class="hover:text-primary transition-colors" href="#">Privacy</a>
-                        <a class="hover:text-primary transition-colors" href="#">Terms</a>
-                        <a class="hover:text-primary transition-colors" href="#">Contact</a>
-                    </div>
-                    <div class="flex gap-4">
-                        <div
-                            class="size-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors cursor-pointer">
-                            <span class="material-symbols-outlined text-lg">public</span>
-                        </div>
-                        <div
-                            class="size-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors cursor-pointer">
-                            <span class="material-symbols-outlined text-lg">share</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="max-w-7xl mx-auto mt-8 pt-8 border-t border-slate-800 text-center">
-                    <p class="text-slate-500 text-xs font-medium uppercase tracking-widest">© 2024 Joda en la Estación.
-                        All rights reserved. Urban Movement Worldwide.</p>
-                </div>
-            </footer>
+            </div>
+
         </div>
-    </div>
+    </header>
+    <main class="max-w-7xl mx-auto px-6 py-12">
+        <!-- Breadcrumbs -->
+        <nav class="flex items-center gap-2 text-sm text-slate-500 mb-8">
+            <a class="hover:text-primary" href="#">Home</a>
+            <span class="material-symbols-outlined text-xs">chevron_right</span>
+            <a class="hover:text-primary" href="#">Festival de Musica</a>
+            <span class="material-symbols-outlined text-xs">chevron_right</span>
+            <span class="text-slate-300">Cyber-Pulse 2026</span>
+        </nav>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            <!-- Left Column: Event Details -->
+            <div class="lg:col-span-7 flex flex-col gap-8">
+                <div class="relative group overflow-hidden rounded-xl aspect-[16/9] shadow-2xl">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent z-10">
+                    </div>
+                    <img alt="Cyber-Pulse Music Festival crowd with neon lights"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        data-alt="Crowd at a futuristic music festival with neon lights"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-VeB8bvUfwvhzzZ3lDaEsV3uHGAeS6sSBtQPUkzcYdLu7DAvNsBX9RE4_ZQ6BtdFPytnonLKAvaMXyRovldQELK99vfN0FwLtzWeDt4Hph7H_oQLsN3SGkeIbp-1Hg3z9F0Lb_uvI2v5FXQfhfOBbIqXnm3gF8xnhmK8BuXa7katCyTi_X-NiMihdT_MpemBuzBl9rtaL9QuQsxRGnjVmLv0-79mHH9tkwhNUaGsG4fYDA7gxgAjWgCDOtZ4Prmqp_z1sl1kMFb0" />
+                    <div class="absolute bottom-6 left-6 z-20">
+                        <span
+                            class="bg-primary px-3 py-1 rounded text-xs font-bold tracking-widest uppercase mb-2 inline-block">Featured
+                            Event</span>
+                        <h2 class="text-5xl font-black tracking-tighter">CYBER-PULSE <br />FESTIVAL DE MUSICA</h2>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div
+                        class="bg-surface-dark p-6 rounded-xl border border-border-dark flex flex-col items-center text-center">
+                        <span class="material-symbols-outlined text-primary mb-3 text-3xl">calendar_month</span>
+                        <p class="text-xs text-slate-400 uppercase tracking-widest font-bold mb-1">Date</p>
+                        <p class="font-bold text-lg">Dec 15, 2024</p>
+                    </div>
+                    <div class="bg-surface-dark p-6 rounded-xl border border-border-dark flex flex-col items-center text-center"
+                        data-location="Neo-Tokyo Arena" style="">
+                        <span class="material-symbols-outlined text-primary mb-3 text-3xl">location_on</span>
+                        <p class="text-xs text-slate-400 uppercase tracking-widest font-bold mb-1">Location</p>
+                        <p class="font-bold text-lg">Neo-Tokyo Arena</p>
+                    </div>
+                    <div
+                        class="bg-surface-dark p-6 rounded-xl border border-border-dark flex flex-col items-center text-center">
+                        <span class="material-symbols-outlined text-primary mb-3 text-3xl">payments</span>
+                        <p class="text-xs text-slate-400 uppercase tracking-widest font-bold mb-1">Starts At</p>
+                        <p class="font-bold text-lg text-primary">$1.00</p>
+                    </div>
+                </div>
+                <div class="prose prose-invert max-w-none">
+                    <h3 class="text-2xl font-bold mb-4">Acerca del evento</h3>
+                    <p class="text-slate-400 leading-relaxed text-lg">
+                        Sumérgete en una experiencia inmersiva de 12 horas donde el arte digital se fusiona con la
+                        música electrónica de alta velocidad.
+                        Con DJs de talla mundial y visuales inspirados en el neo-Tokio, Cyber-Pulse es más que un
+                        festival: es un viaje al futuro de la vida nocturna urbana.
+                    </p>
+                    <ul class="mt-6 space-y-3">
+                        <li class="flex items-center gap-3 text-slate-300">
+                            <span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                            Sistema de sonido premium de SonicCore
+                        </li>
+                        <li class="flex items-center gap-3 text-slate-300">
+                            <span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                            Instalaciones LED interactivas
+                        </li>
+                        <li class="flex items-center gap-3 text-slate-300">
+                            <span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                            Mercancía del festival de edición limitada
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Right Column: Checkout Form -->
+            <div class="lg:col-span-5">
+                <div class="bg-surface-dark border border-border-dark rounded-xl p-8 sticky top-28 shadow-xl">
+                    <h3 class="text-2xl font-bold mb-8">Pago seguro</h3>
+                    <!-- FORMULARIO DE COMPRA-->
+                    <form id="formCompra" class="space-y-6">
+                        <!-- Ticket Selection -->
+                        <div class="space-y-4">
+                            <label class="block text-sm font-bold uppercase tracking-widest text-slate-400">Select
+                                Tickets</label>
+                            <div
+                                class="flex items-center justify-between p-4 bg-background-dark rounded-lg border border-border-dark">
+                                <div>
+                                    <p class="font-bold">General Admission</p>
+                                    <p class="text-xs text-slate-500">$1.00 por ticket</p>
+                                </div>
+
+                                <div class="flex items-center gap-4">
+                                    <label class="text-xs text-slate-500">Cantidad
+                                        de Entradas</label>
+                                    <select id="cantUser"
+                                        class="w-8 h-8 flex items-center justify-center rounded-full bg-border-dark hover:bg-primary transition-colors">
+                                        <option>1 Ticket</option>
+                                        <option>2 Tickets</option>
+                                        <option>3 Tickets</option>
+                                        <option>4 Tickets</option>
+                                        <option>Group (5+)</option>
+                                    </select>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <!-- Buyer Info -->
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="space-y-2">
+                                <label class="block text-sm font-bold text-slate-400 uppercase tracking-widest"
+                                    for="nombreUser">Nombre</label>
+                                <input
+                                    class="w-full bg-background-dark border-border-dark rounded-lg py-3 px-4 focus:ring-primary focus:border-primary transition-all"
+                                    id="nombreUser" placeholder="John" type="text" />
+                            </div>
+                            <div class="space-y-2">
+                                <label class="block text-sm font-bold text-slate-400 uppercase tracking-widest"
+                                    for="apellidoUser">Apellido </label>
+                                <input
+                                    class="w-full bg-background-dark border-border-dark rounded-lg py-3 px-4 focus:ring-primary focus:border-primary transition-all"
+                                    id="apellidoUser" placeholder="Doe" type="text" />
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="block text-sm font-bold text-slate-400 uppercase tracking-widest"
+                                for="emailUser">Email</label>
+                            <input
+                                class="w-full bg-background-dark border-border-dark rounded-lg py-3 px-4 focus:ring-primary focus:border-primary transition-all"
+                                id="emailUser" placeholder="john.doe@urban.com" type="email" />
+                        </div>
+                        <!-- Summary -->
+                        <div class="pt-6 border-t border-border-dark space-y-3">
+                            <div class="flex justify-between text-slate-400">
+                                <span>Subtotal (2 tickets)</span>
+                                <span>$178.00</span>
+                            </div>
+                            <div class="flex justify-between text-slate-400">
+                                <span>Service Fee</span>
+                                <span>$12.50</span>
+                            </div>
+                            <div class="flex justify-between text-2xl font-bold pt-2">
+                                <span>Total Price</span>
+                                <span class="text-primary">$190.50</span>
+                            </div>
+                        </div>
+                        <!-- Submit Button -->
+                        <button id="btnComprar"
+                            class="w-full bg-primary py-5 rounded-lg font-black text-lg tracking-widest uppercase neon-glow hover:-translate-y-1 transition-all duration-300"
+                            type="submit">
+                            Compra entradas ahora
+                        </button>
+                        <div class="flex items-center justify-center gap-6 pt-4 text-slate-500">
+                            <div class="flex items-center gap-1">
+                                <span class="material-symbols-outlined text-sm">lock</span>
+                                <span class="text-[10px] uppercase font-bold tracking-widest">SSL Secure</span>
+                            </div>
+                            <div class="flex items-center gap-1">
+                                <span class="material-symbols-outlined text-sm">verified</span>
+                                <span class="text-[10px] uppercase font-bold tracking-widest">Official Reseller</span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="border-t border-border-dark py-12 mt-20">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex items-center gap-3 opacity-50">
+                <span class="material-symbols-outlined text-2xl">theater_comedy</span>
+                <span class="font-bold tracking-tighter">URBAN EVENTS © 2026</span>
+                <span class="font-bold tracking-tighter">Proyecto creado por:</span>
+                <span class="font-bold tracking-tighter">Garcete Luis Julian</span>
+
+
+            </div>
+            <div class="flex gap-8 text-sm text-slate-500">
+                <a class="hover:text-primary transition-colors" href="https://www.linkedin.com/in/julian-garcete-685738370/">Linkedin</a>
+                <a class="hover:text-primary transition-colors" href="https://garcetejulian3.github.io/portafolio_personal/">Portafolio</a>
+                <a class="hover:text-primary transition-colors" href="https://github.com/Garcetejulian3">GitHub </a>
+            </div>
+        
+        </div>
+    </footer>
     <script src="js/api.js"></script>
 </body>
 

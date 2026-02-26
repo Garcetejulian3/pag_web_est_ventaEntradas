@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Order Confirmed | UrbanEvents</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#8c2bee",
+                        "background-light": "#f7f6f8",
+                        "background-dark": "#120d18",
+                        "surface-dark": "#1e1626",
+                        "border-dark": "#362348",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .neon-glow {
+            box-shadow: 0 0 15px rgba(140, 43, 238, 0.4);
+        }
+        .neon-glow:hover {
+            box-shadow: 0 0 25px rgba(140, 43, 238, 0.6);
+        }
+        .ticket-shape {
+            mask-image: radial-gradient(circle at 0 50%, transparent 12px, black 13px),
+                        radial-gradient(circle at 100% 50%, transparent 12px, black 13px);
+            mask-composite: intersect;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+    <header class="border-b border-border-dark bg-background-dark/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-10">
+                <div class="flex items-center gap-3">
+                    <div class="text-primary">
+                        <span class="material-symbols-outlined text-4xl">theater_comedy</span>
+                    </div>
+                    <h1 class="text-2xl font-bold tracking-tight">URBAN<span
+                            class="text-primary text-opacity-90">EVENTS</span></h1>
+                </div>
+                <nav class="hidden md:flex items-center gap-8">
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="#">Explore</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="#">My Tickets</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="#">Support</a>
+                </nav>
+            </div>
+            <div class="flex items-center gap-6">
+                <div class="relative hidden lg:block">
+                    <span
+                        class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xl">search</span>
+                    <input
+                        class="bg-surface-dark border-border-dark rounded-lg pl-10 pr-4 py-2 text-sm w-64 focus:ring-primary focus:border-primary"
+                        placeholder="Find urban events..." type="text" />
+                </div>
+                <div class="flex items-center gap-4">
+                    <span class="text-sm font-bold text-slate-400">JD</span>
+                    <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center font-bold">JD</div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="max-w-4xl mx-auto px-6 py-16 text-center">
+        <div class="mb-8">
+            <div
+                class="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-6 border border-primary/30">
+                <span class="material-symbols-outlined text-primary text-5xl">check_circle</span>
+            </div>
+            <h2 class="text-5xl font-black tracking-tighter mb-4">THANK YOU FOR YOUR PURCHASE!</h2>
+            <p class="text-slate-400 text-lg max-w-lg mx-auto">Your order has been processed successfully. A
+                confirmation receipt has been sent to <span class="text-white font-bold">john.doe@urban.com</span>.</p>
+        </div>
+        <div class="relative max-w-xl mx-auto mb-12">
+            <div class="bg-surface-dark border border-border-dark rounded-2xl overflow-hidden shadow-2xl">
+                <div
+                    class="bg-primary/10 p-6 border-b border-border-dark border-dashed flex items-center justify-between">
+                    <div class="text-left">
+                        <p class="text-xs font-bold text-primary uppercase tracking-widest mb-1">Official Digital Entry
+                        </p>
+                        <h3 class="text-2xl font-bold">Cyber-Pulse Music Festival</h3>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-xs text-slate-400 uppercase tracking-widest font-bold">Order #</p>
+                        <p class="font-bold">UP-2024-8891</p>
+                    </div>
+                </div>
+                <div class="p-8 flex flex-col md:flex-row items-center gap-10">
+                    <div class="flex-shrink-0 bg-white p-3 rounded-xl">
+                        <div class="w-40 h-40 flex items-center justify-center border-2 border-slate-100 relative">
+                            <span class="material-symbols-outlined text-slate-900 text-[10rem]">qr_code_2</span>
+                        </div>
+                    </div>
+                    <div class="flex-grow grid grid-cols-1 gap-6 text-left">
+                        <div>
+                            <p class="text-xs text-slate-400 uppercase tracking-widest font-bold mb-1">Date &amp; Time
+                            </p>
+                            <p class="font-bold text-lg">Dec 15, 2024 • 8:00 PM</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-slate-400 uppercase tracking-widest font-bold mb-1">Venue</p>
+                            <p class="font-bold text-lg">Neo-Tokyo Arena</p>
+                        </div>
+                        <div class="flex gap-8">
+                            <div>
+                                <p class="text-xs text-slate-400 uppercase tracking-widest font-bold mb-1">Section</p>
+                                <p class="font-bold text-lg">GA Floor</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 uppercase tracking-widest font-bold mb-1">Qty</p>
+                                <p class="font-bold text-lg">2 Tickets</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="bg-background-dark/50 p-4 border-t border-border-dark flex justify-between items-center px-8">
+                    <div class="flex items-center gap-2 text-slate-500">
+                        <span class="material-symbols-outlined text-sm">info</span>
+                        <span class="text-[10px] uppercase font-bold tracking-widest">Valid for single entry per
+                            person</span>
+                    </div>
+                    <div class="text-primary text-sm font-bold tracking-tighter">URBAN EVENTS SECURITY TAG</div>
+                </div>
+            </div>
+            <div class="absolute top-[108px] -left-3 w-6 h-6 bg-background-dark rounded-full border border-border-dark">
+            </div>
+            <div
+                class="absolute top-[108px] -right-3 w-6 h-6 bg-background-dark rounded-full border border-border-dark">
+            </div>
+        </div>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+            <button
+                class="w-full sm:w-auto bg-primary text-white px-10 py-4 rounded-lg font-black text-sm tracking-widest uppercase neon-glow flex items-center justify-center gap-2 hover:-translate-y-1 transition-all">
+                <span class="material-symbols-outlined">download</span>
+                Download Ticket (PDF)
+            </button>
+            <button
+                class="w-full sm:w-auto bg-surface-dark border border-border-dark text-white px-10 py-4 rounded-lg font-black text-sm tracking-widest uppercase flex items-center justify-center gap-2 hover:bg-border-dark transition-all">
+                <span class="material-symbols-outlined">confirmation_number</span>
+                View My Tickets
+            </button>
+        </div>
+        <div class="border-t border-border-dark pt-12">
+            <p class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-6">Share with friends</p>
+            <div class="flex justify-center gap-4">
+                <button
+                    class="w-12 h-12 rounded-full border border-border-dark bg-surface-dark flex items-center justify-center hover:border-primary hover:text-primary transition-all">
+                    <span class="material-symbols-outlined">share</span>
+                </button>
+                <button
+                    class="w-12 h-12 rounded-full border border-border-dark bg-surface-dark flex items-center justify-center hover:border-primary hover:text-primary transition-all">
+                    <span class="material-symbols-outlined">alternate_email</span>
+                </button>
+                <button
+                    class="w-12 h-12 rounded-full border border-border-dark bg-surface-dark flex items-center justify-center hover:border-primary hover:text-primary transition-all">
+                    <span class="material-symbols-outlined">link</span>
+                </button>
+            </div>
+        </div>
+    </main>
+    <footer class="border-t border-border-dark py-12 mt-20">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex items-center gap-3 opacity-50">
+                <span class="material-symbols-outlined text-2xl">theater_comedy</span>
+                <span class="font-bold tracking-tighter">URBAN EVENTS © 2024</span>
+            </div>
+            <div class="flex gap-8 text-sm text-slate-500">
+                <a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+                <a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+                <a class="hover:text-primary transition-colors" href="#">Refund Policy</a>
+                <a class="hover:text-primary transition-colors" href="#">Contact</a>
+            </div>
+            <div class="flex gap-4">
+                <a class="w-10 h-10 rounded-full bg-surface-dark flex items-center justify-center hover:bg-primary transition-colors"
+                    href="#">
+                    <span class="material-symbols-outlined text-lg">share</span>
+                </a>
+                <a class="w-10 h-10 rounded-full bg-surface-dark flex items-center justify-center hover:bg-primary transition-colors"
+                    href="#">
+                    <span class="material-symbols-outlined text-lg">alternate_email</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -1,9 +1,10 @@
+const form = document.getElementById("formCompra");
 const btnComprar = document.getElementById("btnComprar");
 
-btnComprar.addEventListener("click", comprarEntradas);
+form.addEventListener("submit", comprarEntradas);
         
 // Conts para el formulario de compra
-async function comprarEntradas() {
+async function comprarEntradas(event) {
 
     event.preventDefault(); // Evitar que el formulario se envíe de forma tradicional
 
