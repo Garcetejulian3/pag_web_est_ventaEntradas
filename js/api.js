@@ -34,7 +34,7 @@ async function comprarEntradas(event) {
         // Bloquear botón + feedback UX
         btnComprar.disabled = true;
         btnComprar.innerText = "Procesando pago...";
-        const response = await fetch('https://nonmodal-abandonable-vanesa.ngrok-free.dev/api/compras', {
+        const response = await fetch('https://proyect-vent-sofi.onrender.com/api/compras', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
